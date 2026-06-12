@@ -62,6 +62,11 @@ const ombpData = {
         { name: "Plan To Replenish", apiName: "ahpbkquw" },
         { name: "Demand to Management", apiName: "bxn5og62" },
         { name: "Demand Forecast to Supply Plan", apiName: "jhp8yqj0" },
+
+        // No OMBP Description available for this item.
+        // This will skip the OMBP and Persona Description link.
+        { name: "Production Order to Costing", apiName: "" },
+
         { name: "Secure Role Design to User Access Control", apiName: "h5jc9q2k" },
         { name: "Separation of Duties (SoD) to User Access Certification", apiName: "9jcnbci7" }
     ],
@@ -143,10 +148,8 @@ function generateHTMLFromExcel() {
         return;
     }
 
-    if (!ombpDescriptionApiName) {
-        alert("❗ Please select valid OMBP Name to auto-fill OMBP Description API Name.");
-        return;
-    }
+    // Skip OMBP Description only when that selected OMBP has no description API name.
+    const skipOmbpDescription = !ombpDescriptionApiName;
 
     if (!fileInput.files.length) {
         alert("❗ Please upload an Excel file.");
@@ -215,9 +218,10 @@ function generateHTMLFromExcel() {
       font-size: 16px;
       font-weight:400;
       position: relative;
-    ">${escapeHTML(pillarName)} - ${escapeHTML(ombpName)}</a></h4>
-        
-        <h4><a data-iridize-nextscenario="{&quot;nextScenario&quot;:&quot;${escapeHTML(ombpDescriptionApiName)}&quot;,&quot;dontClose&quot;:true,&quot;markClosed&quot;:false}" data-iridize-role="nextScenarioBt" href="javascript:void(0)" style="
+    ">${escapeHTML(pillarName)} - ${escapeHTML(ombpName)}</a></h4>\n`;
+
+        if (!skipOmbpDescription) {
+            outputHTML += `<h4><a data-iridize-nextscenario="{&quot;nextScenario&quot;:&quot;${escapeHTML(ombpDescriptionApiName)}&quot;,&quot;dontClose&quot;:true,&quot;markClosed&quot;:false}" data-iridize-role="nextScenarioBt" href="javascript:void(0)" style="
       display: flex;
       align-items: center;
       justify-content: flex-start;
@@ -231,6 +235,7 @@ function generateHTMLFromExcel() {
       position: relative;
       font-weight: 350;
     ">OMBP and Persona Description: ${escapeHTML(ombpName)} </a></h4>\n`;
+        }
 
         Object.keys(groupedData).forEach(function (role) {
             outputHTML += `<!-- ${escapeHTML(role)} Dropdown -->\n\n`;
