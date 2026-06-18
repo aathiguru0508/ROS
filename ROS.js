@@ -234,6 +234,7 @@ function generateHTMLFromExcel() {
       cursor: pointer;
       position: relative;
       font-weight: bold;
+      margin-bottom: 0px !important;
     ">OMBP and Persona Description: ${escapeHTML(ombpName)} </a></h4>`;
         }
 
