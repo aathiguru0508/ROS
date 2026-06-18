@@ -242,7 +242,7 @@ function generateHTMLFromExcel() {
             outputHTML += `<!-- ${escapeHTML(role)} Dropdown -->\n\n`;
 
             outputHTML += `<details style="
-    border-radius:8px;
+    border-radius:4px;
     cursor: alias;
     border:1px solid #D8D8D8;
     margin-bottom:12px;
@@ -253,7 +253,6 @@ function generateHTMLFromExcel() {
       padding:14px 18px;
       font-size: 16px;
       font-weight: bold;
-      line-height:1.4;
       list-style:none;
       display:flex;
       align-items:center;
