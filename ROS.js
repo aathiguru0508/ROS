@@ -221,7 +221,7 @@ function generateHTMLFromExcel() {
     ">${escapeHTML(pillarName)} - ${escapeHTML(ombpName)}</a></h4>\n`;
 
         if (!skipOmbpDescription) {
-            outputHTML += `<h4><a data-iridize-nextscenario="{&quot;nextScenario&quot;:&quot;${escapeHTML(ombpDescriptionApiName)}&quot;,&quot;dontClose&quot;:true,&quot;markClosed&quot;:false}" data-iridize-role="nextScenarioBt" href="javascript:void(0)" style="
+            outputHTML += `<h4 style="margin-bottom: 0px !important;"><a data-iridize-nextscenario="{&quot;nextScenario&quot;:&quot;${escapeHTML(ombpDescriptionApiName)}&quot;,&quot;dontClose&quot;:true,&quot;markClosed&quot;:false}" data-iridize-role="nextScenarioBt" href="javascript:void(0)" style="
       display: flex;
       align-items: center;
       justify-content: flex-start;
@@ -234,7 +234,6 @@ function generateHTMLFromExcel() {
       cursor: pointer;
       position: relative;
       font-weight: bold;
-      margin-bottom: 0px !important;
     ">OMBP and Persona Description: ${escapeHTML(ombpName)} </a></h4>`;
         }
 
@@ -259,7 +258,7 @@ function generateHTMLFromExcel() {
       position:relative;
     "> <span style="font-weight: bold; black"> ${escapeHTML(role)} </span> <span class="chevron" style="margin-left:auto">❯</span> </summary>
 
-<div class="scroll-content" style="background-color:#f5f4f4; border-radius:20px; border:10px solid white; display:flex; flex-wrap:wrap; justify-content:space-between; max-height:120px; overflow-x:hidden; overflow-y:auto; padding:10px; text-align:left">\n`;
+<div class="scroll-content" style="background-color:#f5f4f4; border-radius:4px; border:10px solid white; display:flex; flex-wrap:wrap; justify-content:space-between; max-height:120px; overflow-x:hidden; overflow-y:auto; padding:10px; text-align:left">\n`;
 
             groupedData[role].forEach(function (item) {
                 const simulationHref = `https://guidedlearning.oracle.com/player/latest/api/scenario/simulation/try_it/${encodeURIComponent(appId)}/${encodeURIComponent(item.apiName)}/lang/--/?draft=dev&windowMode=unpin`;
