@@ -229,7 +229,7 @@ function generateHTMLFromExcel() {
       padding: 12px 14px;
       color: #000;
       text-decoration: none;
-      border-radius: 10px;
+      border-radius: 4px;
       font-size: 16px;
       border: 1px solid #D8D8D8;
       cursor: pointer;
