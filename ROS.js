@@ -216,10 +216,9 @@ function generateHTMLFromExcel() {
       text-decoration: none;
       border-radius: 10px;
       font-size: 16px;
-      font-weight:400;
+      font-weight: bold;
       position: relative;
       cursor: default;
-
     ">${escapeHTML(pillarName)} - ${escapeHTML(ombpName)}</a></h4>\n`;
 
         if (!skipOmbpDescription) {
@@ -235,7 +234,7 @@ function generateHTMLFromExcel() {
       border: 1px solid #D8D8D8;
       cursor: pointer;
       position: relative;
-      font-weight: 350;
+      font-weight: bold;
     ">OMBP and Persona Description: ${escapeHTML(ombpName)} </a></h4>\n`;
         }
 
@@ -253,13 +252,13 @@ function generateHTMLFromExcel() {
       cursor:pointer;
       padding:14px 18px;
       font-size:14px;
-      font-weight: 350;
+      font-weight: bold;
       line-height:1.4;
       list-style:none;
       display:flex;
       align-items:center;
       position:relative;
-    "> <span style="font-weight: 350; text-shadow:0px 0px 0.4px black"> ${escapeHTML(role)} </span> <span class="chevron" style="margin-left:auto">❯</span> </summary>
+    "> <span style="font-weight: bold; text-shadow:0px 0px 0.4px black"> ${escapeHTML(role)} </span> <span class="chevron" style="margin-left:auto">❯</span> </summary>
 
 <div class="scroll-content" style="background-color:#f5f4f4; border-radius:20px; border:10px solid white; display:flex; flex-wrap:wrap; justify-content:space-between; max-height:120px; overflow-x:hidden; overflow-y:auto; padding:10px; text-align:left">\n`;
 
