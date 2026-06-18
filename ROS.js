@@ -218,6 +218,8 @@ function generateHTMLFromExcel() {
       font-size: 16px;
       font-weight:400;
       position: relative;
+      cursor: default;
+
     ">${escapeHTML(pillarName)} - ${escapeHTML(ombpName)}</a></h4>\n`;
 
         if (!skipOmbpDescription) {
@@ -269,7 +271,7 @@ function generateHTMLFromExcel() {
                 outputHTML += `<div style="margin-bottom:10px; margin-top:10px; width:100%">
 <div style="align-items:center; display:flex; gap:10px;">
   <a
-    style="flex:1; display:block; padding:12px; font-size:13px; text-shadow:0px 0px 0.2px; border-radius:10px; text-decoration:none; color:#000; background:#ffffff; font-weight:350;"
+    style="flex:1; display:block; padding:12px; font-size:13px; text-shadow:0px 0px 0.2px; border-radius:10px; text-decoration:none; color:#000; background:#ffffff; font-weight:350; cursor: default;"
   >
     ${escapeHTML(item.guideName)}
   </a>
