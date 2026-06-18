@@ -249,7 +249,7 @@ function generateHTMLFromExcel() {
     background-color:white;
   "><summary class="summary-arrow" style="
       cursor:pointer;
-      padding:14px 18px;
+      padding:22px 18px;
       font-size: 16px;
       font-weight: bold;
       line-height:1.4;
@@ -269,7 +269,7 @@ function generateHTMLFromExcel() {
                 outputHTML += `<div style="margin-bottom:10px; margin-top:10px; width:100%">
 <div style="align-items:center; display:flex; gap:10px;">
   <a
-    style="flex:1; display:block; padding:12px; font-size: 16px; border-radius:10px; text-decoration:none; color:#000; background:#ffffff; font-weight:350; cursor: default;"
+    style="flex:1; display:block; padding:12px; font-size: 14px; border-radius:10px; text-decoration:none; color:#000; background:#ffffff; font-weight:350; cursor: default;"
   >
     ${escapeHTML(item.guideName)}
   </a>
