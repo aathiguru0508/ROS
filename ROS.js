@@ -245,7 +245,6 @@ function generateHTMLFromExcel() {
     border-radius:4px;
     cursor: alias;
     border:1px solid #D8D8D8;
-    margin-bottom:12px;
     overflow:hidden;
     background-color:white;
   "><summary class="summary-arrow" style="
@@ -253,6 +252,7 @@ function generateHTMLFromExcel() {
       padding:14px 18px;
       font-size: 16px;
       font-weight: bold;
+      line-height:1.4;
       list-style:none;
       display:flex;
       align-items:center;
