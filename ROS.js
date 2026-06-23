@@ -207,25 +207,35 @@ function generateHTMLFromExcel() {
 
         let outputHTML = "";
 
-outputHTML += `<h4 style="margin-bottom: 0px !important;">
-  <a
-    ${!skipOmbpDescription ? `data-iridize-nextscenario="{&quot;nextScenario&quot;:&quot;${escapeHTML(ombpDescriptionApiName)}&quot;,&quot;dontClose&quot;:true,&quot;markClosed&quot;:false}" data-iridize-role="nextScenarioBt" href="javascript:void(0)"` : ``}
-    style="
+outputHTML += `<h4><a style="
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 14px;
+  color: #000;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  position: relative;
+  cursor: default;
+">${escapeHTML(pillarName)} - ${escapeHTML(ombpName)}</a></h4>\n`;
+
+if (!skipOmbpDescription) {
+    outputHTML += `<h4 style="margin-bottom: 0px !important;"><a data-iridize-nextscenario="{&quot;nextScenario&quot;:&quot;${escapeHTML(ombpDescriptionApiName)}&quot;,&quot;dontClose&quot;:true,&quot;markClosed&quot;:false}" data-iridize-role="nextScenarioBt" href="javascript:void(0)" style="
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       padding: 12px 14px;
       color: #000;
       text-decoration: none;
       border-radius: 4px;
       font-size: 16px;
       border: 1px solid #D8D8D8;
+      cursor: pointer;
       position: relative;
       font-weight: bold;
-      ${skipOmbpDescription ? 'cursor: default;' : 'cursor: pointer;'}
-    "
-  >${escapeHTML(pillarName)} - ${escapeHTML(ombpName)}</a>
-</h4>\n`;
+    ">OMBP and Persona Description: ${escapeHTML(ombpName)} </a></h4>`;
+}
 
         Object.keys(groupedData).forEach(function (role) {
             outputHTML += `<!-- ${escapeHTML(role)} Dropdown -->\n\n`;
