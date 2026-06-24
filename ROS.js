@@ -305,7 +305,6 @@ if (!skipOmbpDescription) {
 
             outputHTML += `</div>
 </details>\n\n`;
-        });
 
         outputHTML += `<style type="text/css">
 summary.summary-arrow {
