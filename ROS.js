@@ -207,35 +207,22 @@ function generateHTMLFromExcel() {
 
         let outputHTML = "";
 
-outputHTML += `<h4><a style="
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 14px;
-  color: #000;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: bold;
-  position: relative;
-  cursor: default;
-">${escapeHTML(pillarName)} - ${escapeHTML(ombpName)}</a></h4>\n`;
-
-if (!skipOmbpDescription) {
-    outputHTML += `<h4 style="margin-bottom: 0px !important;"><a data-iridize-nextscenario="{&quot;nextScenario&quot;:&quot;${escapeHTML(ombpDescriptionApiName)}&quot;,&quot;dontClose&quot;:true,&quot;markClosed&quot;:false}" data-iridize-role="nextScenarioBt" href="javascript:void(0)" style="
+outputHTML += `<h4 style="margin-bottom:10px !important"><a data-iridize-nextscenario="{&quot;nextScenario&quot;:&quot;${escapeHTML(ombpDescriptionApiName)}&quot;,&quot;dontClose&quot;:true,&quot;markClosed&quot;:false}" data-iridize-role="nextScenarioBt" href="javascript:void(0)" style="
       display: flex;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: center;
       padding: 12px 14px;
       color: #000;
       text-decoration: none;
       border-radius: 4px;
       font-size: 16px;
-      border: 1px solid #D8D8D8;
       cursor: pointer;
       position: relative;
       font-weight: bold;
-    ">OMBP and Persona Description: ${escapeHTML(ombpName)} </a></h4>`;
-}
+    ">${escapeHTML(pillarName)} - ${escapeHTML(ombpName)} </a></h4>
+
+<div style="color:#000000; font-size:15px; font-weight:300; margin-bottom:12px; text-align:center">Click on Persona to see related Use Cases</div>
+`;
 
         Object.keys(groupedData).forEach(function (role) {
             outputHTML += `<!-- ${escapeHTML(role)} Dropdown -->\n\n`;
