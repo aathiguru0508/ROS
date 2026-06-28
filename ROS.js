@@ -292,6 +292,7 @@ outputHTML += `<h4 style="margin-bottom:10px !important"><a data-iridize-nextsce
 
             outputHTML += `</div>
 </details>\n\n`;
+        });
 
         outputHTML += `<style type="text/css">
 summary.summary-arrow {
