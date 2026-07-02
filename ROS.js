@@ -71,7 +71,15 @@ const ombpData = {
         { name: "Separation of Duties (SoD) to User Access Certification", apiName: "9jcnbci7" }
     ],
 
-    CX: [],
+    CX: [
+        // No OMBP Description available for this item.
+        // This will skip the OMBP and Persona Description link.
+       { name: "Lead to Opportunity", apiName: "" },
+       { name: "Opportunity to Quote", apiName: "" },
+       { name: "Quote to Revenue", apiName: "" },
+       { name: "Sales Forecast to Field Action", apiName: "" },
+       { name: "Customer Contact To Resolution", apiName: "" },
+    ],
     EPM: [],
     WMS: [],
     OTM: []
