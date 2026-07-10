@@ -245,7 +245,7 @@ outputHTML += `<h4 style="margin-bottom:10px !important"><a data-iridize-nextsce
   "><summary class="summary-arrow" style="
       cursor:pointer;
       padding:20px 18px;
-      font-size: 16px;
+      font-size: 13.4px;
       font-weight: bold;
       line-height:1.4;
       list-style:none;
