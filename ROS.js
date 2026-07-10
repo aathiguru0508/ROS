@@ -262,7 +262,7 @@ outputHTML += `<h4 style="margin-bottom:10px !important"><a data-iridize-nextsce
                 const videoHref = `https://guidedlearning.oracle.com/player/latest/api/scenario/simulation/see_it/${encodeURIComponent(appId)}/${encodeURIComponent(item.apiName)}/lang/--/?draft=dev&windowMode=unpin`;
 
                 outputHTML += `<div style="margin-bottom:3px; margin-left:0; margin-right:0; margin-top:3px; width:100%">
-<div style="align-items:center; display:flex; gap:10px;">
+<div style="align-items:center; display:flex; gap:9px;">
   <a
     style="flex:1; display:block; padding:12px; font-size: 13px; border-radius:10px; text-shadow:0px 0px 0.2px; text-decoration:none; color:#000; background:#ffffff; font-weight:380; cursor: default;"
   >
@@ -275,7 +275,7 @@ outputHTML += `<h4 style="margin-bottom:10px !important"><a data-iridize-nextsce
     target="_blank"
     title="Simulation"
   >
-    <img alt="" height="20" src="https://guidedlearning.oracle.com/player/latest/api/app/${escapeHTML(appId)}/upload_content_image/flf2c0u/image/content_image" width="20" style="cursor:pointer;" />
+    <img alt="" height="25" src="https://i.ibb.co/27PH5R0K/Chat-GPT-Image-Jul-10-2026-06-32-32-PM.png" width="25" style="cursor:pointer;" />
   </a>
 
   <a
