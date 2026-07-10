@@ -223,13 +223,13 @@ outputHTML += `<h4 style="margin-bottom:10px !important"><a data-iridize-nextsce
       color: #000;
       text-decoration: none;
       border-radius: 4px;
-      font-size: 16px;
+      font-size: 15px;
       cursor: pointer;
       position: relative;
       font-weight: bold;
     ">${escapeHTML(pillarName)} - ${escapeHTML(ombpName)} </a></h4>
 
-<div style="color:#000000; font-size:15px; font-weight:300; margin-bottom:12px; text-align:center">Click on Persona to see related Use Cases</div>
+<div style="color:#000000; font-size:14px; font-weight:300; margin-bottom:12px; text-align:center">Click on Persona to see related Use Cases</div>
 `;
 
         Object.keys(groupedData).forEach(function (role) {
@@ -239,6 +239,7 @@ outputHTML += `<h4 style="margin-bottom:10px !important"><a data-iridize-nextsce
     border-radius:4px;
     cursor: alias;
     border:1px solid #D8D8D8;
+    margin-bottom:5px;
     overflow:hidden;
     background-color:white;
   "><summary class="summary-arrow" style="
@@ -253,17 +254,17 @@ outputHTML += `<h4 style="margin-bottom:10px !important"><a data-iridize-nextsce
       position:relative;
     "> <span style="font-weight: bold; black"> ${escapeHTML(role)} </span> <span class="chevron" style="margin-left:auto">❯</span> </summary>
 
-<div class="scroll-content" style="background-color:#f5f4f4; border-radius:20px; border:10px solid white; display:flex; flex-wrap:wrap; justify-content:space-between; max-height:150px; overflow-x:hidden; overflow-y:auto; padding:10px; text-align:left">\n`;
+<div class="scroll-content" style="background-color:#f5f4f4; border-radius:20px; border-top-width:2px; border:8px solid white; display:flex; flex-wrap:wrap; justify-content:space-between; max-height:120px; overflow-x:hidden; overflow-y:auto; padding:1px 8px 4px 8px; text-align:left">\n`;
 
             groupedData[role].forEach(function (item) {
                 const simulationHref = `https://guidedlearning.oracle.com/player/latest/api/scenario/simulation/try_it/${encodeURIComponent(appId)}/${encodeURIComponent(item.apiName)}/lang/--/?draft=dev&windowMode=unpin`;
                 const stepGuideHref = `https://guidedlearning.oracle.com/player/latest/api/scenario/export/v2/${encodeURIComponent(appId)}/${encodeURIComponent(item.apiName)}/lang/--/?draft=dev&windowMode=unpin`;
                 const videoHref = `https://guidedlearning.oracle.com/player/latest/api/scenario/simulation/see_it/${encodeURIComponent(appId)}/${encodeURIComponent(item.apiName)}/lang/--/?draft=dev&windowMode=unpin`;
 
-                outputHTML += `<div style="margin-bottom:10px; margin-top:10px; width:100%">
+                outputHTML += `<div style="margin-bottom:3px; margin-left:0; margin-right:0; margin-top:3px; width:100%">
 <div style="align-items:center; display:flex; gap:10px;">
   <a
-    style="flex:1; display:block; padding:12px; font-size: 14px; border-radius:10px; text-decoration:none; color:#000; background:#ffffff; font-weight:450; cursor: default;"
+    style="flex:1; display:block; padding:12px; font-size: 13px; border-radius:10px; text-shadow:0px 0px 0.2px; text-decoration:none; color:#000; background:#ffffff; font-weight:380; cursor: default;"
   >
     ${escapeHTML(item.guideName)}
   </a>
