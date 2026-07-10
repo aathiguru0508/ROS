@@ -333,7 +333,9 @@ summary.summary-arrow {
   details[open] summary.summary-arrow .chevron {
     transform: translateY(-50%) rotate(270deg);
   }
-
+  details[open] summary.summary-arrow {
+    padding-bottom: 4px !important;
+  }
   .scroll-content {
     scrollbar-width: thin;
   }
