@@ -139,6 +139,7 @@ function generateHTMLFromExcel() {
     const pillarName = document.getElementById("pillarName").value.trim();
     const ombpName = document.getElementById("ombpName").value.trim();
     const ombpDescriptionApiName = document.getElementById("ombpDescriptionApiName").value.trim();
+    const guideType = document.getElementById("guideType").value.trim();
     const fileInput = document.getElementById("excelFile");
 
     if (!appId) {
@@ -158,6 +159,11 @@ function generateHTMLFromExcel() {
 
     // Skip OMBP Description only when that selected OMBP has no description API name.
     const skipOmbpDescription = !ombpDescriptionApiName;
+
+    if (!guideType) {
+        alert("❗ Please select Guide Type.");
+        return;
+    }
 
     if (!fileInput.files.length) {
         alert("❗ Please upload an Excel file.");
@@ -179,6 +185,7 @@ function generateHTMLFromExcel() {
         }
 
         const groupedData = {};
+        const allGuides = [];
 
         // Excel columns:
         // A = Role
@@ -206,6 +213,11 @@ function generateHTMLFromExcel() {
                 guideName: cleanGuideName,
                 apiName: cleanApiName
             });
+
+            allGuides.push({
+                guideName: cleanGuideName,
+                apiName: cleanApiName
+});
         }
 
         if (Object.keys(groupedData).length === 0) {
@@ -214,6 +226,8 @@ function generateHTMLFromExcel() {
         }
 
         let outputHTML = "";
+
+        if (guideType === "persona") {
 
 outputHTML += `<h4 style="margin-bottom:10px !important"><a data-iridize-nextscenario="{&quot;nextScenario&quot;:&quot;${escapeHTML(ombpDescriptionApiName)}&quot;,&quot;dontClose&quot;:true,&quot;markClosed&quot;:false}" data-iridize-role="nextScenarioBt" href="javascript:void(0)" style="
       display: flex;
@@ -340,6 +354,76 @@ summary.summary-arrow {
     scrollbar-width: thin;
   }
 </style>`;
+
+} else if (guideType === "process") {
+
+outputHTML += `<h4 style="margin-bottom:10px !important"><a data-iridize-nextscenario="{&quot;nextScenario&quot;:&quot;${escapeHTML(ombpDescriptionApiName)}&quot;,&quot;dontClose&quot;:true,&quot;markClosed&quot;:false}" data-iridize-role="nextScenarioBt" href="javascript:void(0)" style="
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0px 0px;
+      color: #000;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 15px;
+      cursor: pointer;
+      position: relative;
+      font-weight: bold;
+    ">${escapeHTML(pillarName)} - ${escapeHTML(ombpName)} </a></h4>
+
+<div class="scroll-content" style="background-color:#f5f4f4; border-radius:20px; border-top-width:2px; border:8px solid white; display:flex; flex-wrap:wrap; justify-content:space-between; max-height:350px; overflow-x:hidden; overflow-y:auto; padding:10px; text-align:left">\n`;
+
+allGuides.forEach(function (item) {
+    const simulationHref = `https://guidedlearning.oracle.com/player/latest/api/scenario/simulation/try_it/${encodeURIComponent(appId)}/${encodeURIComponent(item.apiName)}/lang/--/?draft=dev&windowMode=unpin`;
+    const stepGuideHref = `https://guidedlearning.oracle.com/player/latest/api/scenario/export/v2/${encodeURIComponent(appId)}/${encodeURIComponent(item.apiName)}/lang/--/?draft=dev&windowMode=unpin`;
+    const videoHref = `https://guidedlearning.oracle.com/player/latest/api/scenario/simulation/see_it/${encodeURIComponent(appId)}/${encodeURIComponent(item.apiName)}/lang/--/?draft=dev&windowMode=unpin`;
+
+    outputHTML += `<div style="margin-bottom:3px; margin-left:0; margin-right:0; margin-top:3px; width:100%">
+<div style="align-items:center; display:flex; gap:9px;">
+  <a
+    style="flex:1; display:block; padding:12px; font-size: 13px; border-radius:10px; text-shadow:0px 0px 0.2px; text-decoration:none; color:#000; background:#ffffff; font-weight:380; cursor: default;"
+  >
+    ${escapeHTML(item.guideName)}
+  </a>
+
+  <a
+    style="cursor:pointer;"
+    href="${simulationHref}"
+    target="_blank"
+    title="Simulation"
+  >
+    <img alt="" height="25" src="https://i.ibb.co/27PH5R0K/Chat-GPT-Image-Jul-10-2026-06-32-32-PM.png" width="25" style="cursor:pointer;" />
+  </a>
+
+  <a
+    style="cursor:pointer;"
+    href="${stepGuideHref}"
+    target="_blank"
+    title="Step Guide"
+  >
+    <img alt="" height="20" src="https://guidedlearning.oracle.com/player/latest/api/app/${escapeHTML(appId)}/upload_content_image/m25rmta/image/content_image" width="20" style="cursor:pointer;" />
+  </a>
+
+  <a
+    style="cursor:pointer;"
+    href="${videoHref}"
+    target="_blank"
+    title="Video"
+  >
+    <img alt="" height="20" src="https://guidedlearning.oracle.com/player/latest/api/app/${escapeHTML(appId)}/upload_content_image/yz7d6q8/image/content_image" width="20" style="cursor:pointer;" />
+  </a>
+</div>
+</div>\n`;
+});
+
+outputHTML += `</div>
+
+<style type="text/css">
+.scroll-content {
+    scrollbar-width: thin;
+}
+</style>`;
+}
 
         document.getElementById("output").value = outputHTML;
     };
