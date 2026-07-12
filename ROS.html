@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OGL OMBP Persona Code Generator: ROS</title>
+  <title>OGL OMBP Persona & Process Code Generator: ROS</title>
 
   <link rel="stylesheet" href="ROS.css" />
 
@@ -18,7 +18,7 @@
       <img src="Oracle-Logo.png" alt="Oracle Logo" class="header-logo" />
 
       <h1 class="header-title">
-        OGL OMBP Persona Code Generator: ROS
+        OGL OMBP Persona & Process Code Generator: ROS
       </h1>
     </div>
   </header>
@@ -34,7 +34,7 @@
           <h2 class="app-title">
             <span style="display:flex; align-items:center; gap:12px;">
               <img src="Oracle-Logo.png" alt="Oracle Logo" class="header-logo" />
-              OGL OMBP Persona Code Generator: ROS
+              OGL OMBP Persona & Process Code Generator: ROS
             </span>
 
             <button class="btn" type="button" onclick="downloadExcelTemplate()">
@@ -80,6 +80,12 @@
               autocomplete="off"
               readonly
             />
+            <label for="guideType">Guide Type</label>
+              <select id="guideType">
+                <option value="">Select Guide Type</option>
+                <option value="persona">Persona View</option>
+                <option value="process">Process View</option>
+            </select>
 
             <label for="excelFile">Upload Excel File</label>
 
