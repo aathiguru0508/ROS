@@ -298,7 +298,7 @@ outputHTML += `<h4 style="margin-bottom:10px !important"><a data-iridize-nextsce
     target="_blank"
     title="Step Guide"
   >
-    <img alt="" height="20" src="https://guidedlearning.oracle.com/player/latest/api/app/${escapeHTML(appId)}/upload_content_image/m25rmta/image/content_image" width="20" style="cursor:pointer;" />
+    <img alt="" height="20" src="https://i.ibb.co/214fp5g5/content-image-1.png" width="20" style="cursor:pointer;" />
   </a>
 
   <a
@@ -307,7 +307,7 @@ outputHTML += `<h4 style="margin-bottom:10px !important"><a data-iridize-nextsce
     target="_blank"
     title="Video"
   >
-    <img alt="" height="20" src="https://guidedlearning.oracle.com/player/latest/api/app/${escapeHTML(appId)}/upload_content_image/yz7d6q8/image/content_image" width="20" style="cursor:pointer;" />
+    <img alt="" height="20" src="https://i.ibb.co/tp1vmgch/content-image.png" width="20" style="cursor:pointer;" />
   </a>
 </div>
 </div>\n`;
