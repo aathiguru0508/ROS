@@ -401,7 +401,7 @@ allGuides.forEach(function (item) {
     target="_blank"
     title="Step Guide"
   >
-    <img alt="" height="20" src="https://guidedlearning.oracle.com/player/latest/api/app/${escapeHTML(appId)}/upload_content_image/m25rmta/image/content_image" width="20" style="cursor:pointer;" />
+    <img alt="" height="20" src="https://i.ibb.co/tpM7Smdr/content-image-1.png" width="20" style="cursor:pointer;" />
   </a>
 
   <a
@@ -410,7 +410,7 @@ allGuides.forEach(function (item) {
     target="_blank"
     title="Video"
   >
-    <img alt="" height="20" src="https://guidedlearning.oracle.com/player/latest/api/app/${escapeHTML(appId)}/upload_content_image/yz7d6q8/image/content_image" width="20" style="cursor:pointer;" />
+    <img alt="" height="20" src="https://i.ibb.co/rR70bmZ8/content-image.png" width="20" style="cursor:pointer;" />
   </a>
 </div>
 </div>\n`;
