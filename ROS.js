@@ -289,7 +289,7 @@ outputHTML += `<h4 style="margin-bottom:10px !important"><a data-iridize-nextsce
     target="_blank"
     title="Simulation"
   >
-    <img alt="" height="25" src="https://i.ibb.co/27PH5R0K/Chat-GPT-Image-Jul-10-2026-06-32-32-PM.png" width="25" style="cursor:pointer;" />
+    <img alt="" height="25" src="https://i.ibb.co/rGBpHc3x/P.png" width="25" style="cursor:pointer;" />
   </a>
 
   <a
@@ -392,7 +392,7 @@ allGuides.forEach(function (item) {
     target="_blank"
     title="Simulation"
   >
-    <img alt="" height="25" src="https://i.ibb.co/27PH5R0K/Chat-GPT-Image-Jul-10-2026-06-32-32-PM.png" width="25" style="cursor:pointer;" />
+    <img alt="" height="25" src="https://i.ibb.co/rGBpHc3x/P.png" width="25" style="cursor:pointer;" />
   </a>
 
   <a
